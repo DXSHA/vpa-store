@@ -49,7 +49,7 @@ services:
     environment:
       - DOMAIN=http://83.166.241.132
       - API_HOST=vamshop-api
-      - STORE_HOST=vamshop-storefront
+      - STORE_HOST=
       - ADMIN_HOST=vamshop-dashboard
     ports:
       - 80:80

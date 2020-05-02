@@ -15,7 +15,7 @@ const app = express();
 
 const ADMIN_INDEX_PATH = path.resolve('public/admin/index.html');
 const STATIC_OPTIONS = {
-	maxAge: 31536000000 // One year
+	maxAge: 31536000000 // One year года
 };
 
 app.set('trust proxy', 1);

@@ -15,8 +15,9 @@ services:
       - AJAX_BASE_URL=http://83.166.241.132:3001/ajax 
     volumes:
       - ./content-on-host:/var/www/vamshop-api/public/content
+      - ./content-config:/var/www/vamshop-api/config
     ports:
-      - 3001:3001  
+      - 3001:3001 
     depends_on:
       - db
     restart: always
@@ -27,6 +28,10 @@ services:
       - LANGUAGE=ru
       - AJAX_BASE_URL=http://83.166.241.132:3001/ajax
       - API_BASE_URL=http://83.166.241.132:3001/api/v1
+    volumes:
+      - ./content-scss:/var/www/vpa-store/theme/assets/scss
+      - ./content-sass:/var/www/vpa-store/theme/assets/sass
+      - ./content-config-store:/var/www/vpa-store/config
     ports:
       - 3000:80
     depends_on:
@@ -37,7 +42,9 @@ services:
     image: vamshop/vamshop-dashboard
     environment:
       - LANGUAGE=ru
-      - API_BASE_URL=http://83.166.241.132:3001/api/v1 
+      - API_BASE_URL=http://83.166.241.132:3001/api/v1
+    volumes:
+      - ./content-config-admin:/var/www/vamshop-dashboard/config    
     ports:
       - 3002:80
     depends_on:
@@ -47,9 +54,9 @@ services:
   vamshop-proxy:
     image: vamshop/vamshop-proxy
     environment:
-      - DOMAIN=http://83.166.241.132
+      - DOMAIN=http://83.166.241.132:3000
       - API_HOST=vamshop-api
-      - STORE_HOST=
+      - STORE_HOST=vpa-store
       - ADMIN_HOST=vamshop-dashboard
     ports:
       - 80:80

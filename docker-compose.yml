@@ -28,10 +28,6 @@ services:
       - LANGUAGE=ru
       - AJAX_BASE_URL=http://83.166.241.132:3001/ajax
       - API_BASE_URL=http://83.166.241.132:3001/api/v1
-    volumes:
-      - ./content-scss:/var/www/vpa-store/theme/assets/scss
-      - ./content-sass:/var/www/vpa-store/theme/assets/sass
-      - ./content-config-store:/var/www/vpa-store/config
     ports:
       - 3000:80
     depends_on:

@@ -16,7 +16,7 @@ module.exports = {
 	},
 
 	output: {
-		publicPath: '/theme/',
+		publicPath: '/',
 		path: path.resolve(__dirname, 'theme'),
 		filename: 'assets/js/[name]-[chunkhash].js',
 		chunkFilename: 'assets/js/[name]-[chunkhash].js'

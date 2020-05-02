@@ -19,7 +19,7 @@ server {
         expires 1y;
         access_log off;
         log_not_found off;
-        root /var/www/vamshop-storefront/public/content;
+        root /var/www/vpa-store/public/content;
 
 
         location /assets/ {
@@ -27,11 +27,11 @@ server {
         }
 
         location /sw.js {
-                root /var/www/vamshop-storefront/public/;
+                root /var/www/vpa-store/public/;
         }
 
         location /sw-toolbox.js {
-                root /var/www/vamshop-storefront/public/;
+                root /var/www/vpa-store/public/;
         }
 
         location / {

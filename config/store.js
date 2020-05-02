@@ -1,4 +1,4 @@
-// config used by store client side only
+// конфиг используется только на стороне клиента магазина
 module.exports = {
 	// store UI language
 	language: process.env.LANGUAGE || 'ru',

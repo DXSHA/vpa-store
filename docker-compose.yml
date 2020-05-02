@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  vamshop-api:
+    image: vamshop/vamshop-api
+    environment:
+      - LANGUAGE=ru
+      - DB_HOST=db
+      - DB_PORT=27017
+      - DB_NAME=shop
+      - ASSETS_BASE_URL=http://83.166.241.132:3001
+      - API_BASE_URL=http://83.166.241.132:3001/api/v1
+      - STORE_URL=http://83.166.241.132:3000
+      - ADMIN_BASE_URL=http://83.166.241.132:3002
+      - AJAX_BASE_URL=http://83.166.241.132:3001/ajax 
+    volumes:
+      - ./content-on-host:/var/www/vamshop-api/public/content
+    ports:
+      - 3001:3001  
+    depends_on:
+      - db
+    restart: always
+
+  vpa-store:
+    image: dxsh/vpa-store
+    environment:
+      - LANGUAGE=ru
+      - AJAX_BASE_URL=http://83.166.241.132:3001/ajax
+      - API_BASE_URL=http://83.166.241.132:3001/api/v1
+    ports:
+      - 3000:80
+    depends_on:
+      - vamshop-api
+    restart: always
+
+  vamshop-dashboard:
+    image: vamshop/vamshop-dashboard
+    environment:
+      - LANGUAGE=ru
+      - API_BASE_URL=http://83.166.241.132:3001/api/v1 
+    ports:
+      - 3002:80
+    depends_on:
+      - vamshop-api
+    restart: always
+
+  vamshop-proxy:
+    image: vamshop/vamshop-proxy
+    environment:
+      - DOMAIN=http://83.166.241.132
+      - API_HOST=vamshop-api
+      - STORE_HOST=vamshop-storefront
+      - ADMIN_HOST=vamshop-dashboard
+    ports:
+      - 80:80
+    depends_on:
+      - vamshop-api
+      - vpa-store
+      - vamshop-dashboard
+    restart: always
+
+  db:
+    image: mongo:3.6
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db-on-host:/data/db
+    restart: always

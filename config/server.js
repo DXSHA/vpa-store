@@ -12,6 +12,6 @@ module.exports = {
 	// key to sign tokens
 	jwtSecretKey: process.env.JWT_SECRET_KEY || '-',
 
-	// key to sign store cookies
+	// ключ для подписи  cookies
 	cookieSecretKey: process.env.COOKIE_SECRET_KEY || '-'
 };

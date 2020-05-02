@@ -1,5 +1,5 @@
 FROM node:8
-MAINTAINER Nitin Goyal <nitingoyal.dev@gmail.com>
+MAINTAINER DXSHA <DXSh@ya.ru>
 
 ENV NGINX_CODENAME stretch
 ENV STORE_PORT 3000
@@ -21,11 +21,10 @@ RUN echo "deb http://nginx.org/packages/debian/ ${NGINX_CODENAME} nginx" >> /etc
 RUN npm install pm2 -g
 
 
-RUN mkdir -p /var/www/vamshop-storefront 
+RUN mkdir -p /var/www/vpa-store
+WORKDIR /var/www/vpa-store 
 
-WORKDIR /var/www/vamshop-storefront 
-
-COPY . /var/www/vamshop-storefront 
+COPY . /var/www/vpa-store
 
 # Nginx config
 COPY nginx/nginx.conf /etc/nginx/
@@ -36,7 +35,7 @@ COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x "/usr/local/bin/docker-entrypoint.sh"
 
 # build project
-RUN cd /var/www/vamshop-storefront \
+RUN cd /var/www/vpa-store \
 	&& npm install \
 	&& npm run build
 

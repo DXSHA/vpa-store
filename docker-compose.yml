@@ -38,9 +38,8 @@ services:
     image: vamshop/vamshop-dashboard
     environment:
       - LANGUAGE=ru
-      - API_BASE_URL=http://83.166.241.132:3001/api/v1
-    volumes:
-      - ./content-config-admin:/var/www/vamshop-dashboard/config    
+      - AJAX_BASE_URL=http://83.166.241.132:3001/ajax
+      - API_BASE_URL=http://83.166.241.132:3001/api/v1   
     ports:
       - 3002:80
     depends_on:

@@ -21,13 +21,13 @@
   "contributors": [
     {
       "name": "DXSHA <DXSh@ya.ru>",
-      "url": "https://github.com/DXSHA/vpa-store.git"
+      "url": "https://github.com/DXSHA"
     }
   ],
   "main": "dist/server/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DXSHA/vpa-store.git"
+    "url": "https://github.com/DXSHA/vpa-store"
   },
   "scripts": {
     "compile": "babel src -d dist --presets react --plugins transform-class-properties --quiet",

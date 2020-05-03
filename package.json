@@ -1,33 +1,33 @@
 {
-  "name": "vpa-store",
+  "name": "vamshop-storefront",
   "version": "0.35.0",
-  "description": ". https://DXSHA.ru",
+  "description": "VamShop is React and Node.js based eCommerce platform. https://vamshop.com",
   "keywords": [
-    "DXSHA",
-    "vpa-store",
+    "vamshop",
+    "vamshop-storefront",
     "react",
     "ecommerce",
     "shopping cart",
     "shop",
     "cms"
   ],
-  "homepage": "https://DXSHA.ru",
-  "bugs": "https://github.com/DXSHA/vpa-store/issues",
+  "homepage": "https://vamshop.com",
+  "bugs": "https://github.com/vamshop/vamshop-storefront/issues",
   "license": "MIT",
   "author": {
-    "name": "DXSHA <DXSh@ya.ru>",
-    "url": "https://github.com/DXSHA"
+    "name": "VamShop <vamshop@gmail.com>",
+    "url": "https://github.com/vamshop"
   },
   "contributors": [
     {
-      "name": "DXSHA <DXSh@ya.ru>",
-      "url": "https://github.com/DXSHA"
+      "name": "VamShop <vamshop@gmail.com>",
+      "url": "https://github.com/vamshop"
     }
   ],
   "main": "dist/server/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DXSHA/vpa-store"
+    "url": "https://github.com/vamshop/vamshop-storefront"
   },
   "scripts": {
     "compile": "babel src -d dist --presets react --plugins transform-class-properties --quiet",

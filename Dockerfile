@@ -1,5 +1,5 @@
 FROM node:8
-LABEL maintainer "DXSh <DXSh@ya.ru>, VamShop <vamshop@gmail.com>"
+LABEL maintainer "Nitin Goyal <nitingoyal.dev@gmail.com>, Luke Busstra <luke.busstra@gmail.com>, VamShop <vamshop@gmail.com>"
 
 ENV NGINX_CODENAME stretch
 #ENV VAMSHOP_VERSION 0.36.0
